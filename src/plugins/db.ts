@@ -13,29 +13,21 @@ export class DataLoaders {
   memberTypes: DataLoader<any, MemberTypeEntity>;
 
   constructor(db: DB) {
-    this.users = new DataLoader(async (ids) => {
-      return await db.users.findMany({
-        key: 'id',
-        equalsAnyOf: ids as string[]
-      });
+    this.users = new DataLoader(async (keys) => {
+      const results = await db.users.findMany({ key: 'id', equalsAnyOf: keys as string[] });
+      return keys.map(key => results[key] || null);
     });
-    this.profiles = new DataLoader(async (ids) => {
-      return await db.profiles.findMany({
-        key: 'id',
-        equalsAnyOf: ids as any[]
-      });
+    this.profiles = new DataLoader(async (keys) => {
+      const results = await db.profiles.findMany({ key: 'id', equalsAnyOf: keys as any[] });
+      return keys.map(key => results[key] || null);
     });
-    this.posts = new DataLoader(async (ids) => {
-      return await db.posts.findMany({
-        key: 'id',
-        equalsAnyOf: ids as any[]
-      });
+    this.posts = new DataLoader(async (keys) => {
+      const results = await db.posts.findMany({ key: 'id', equalsAnyOf: keys as any[] });
+      return keys.map(key => results[key] || null);
     });
-    this.memberTypes = new DataLoader(async (ids) => {
-      return await db.memberTypes.findMany({
-        key: 'id',
-        equalsAnyOf: ids as any[]
-      });
+    this.memberTypes = new DataLoader(async (keys) => {
+      const results = await db.memberTypes.findMany({ key: 'id', equalsAnyOf: keys as any[] });
+      return keys.map(key => results[key] || null);
     });
   }
 }

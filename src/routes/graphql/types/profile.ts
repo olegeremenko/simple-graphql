@@ -2,6 +2,7 @@ import { GraphQLID, GraphQLInt, GraphQLObjectType, GraphQLString } from 'graphql
 import { GQLMemberType } from './member-type';
 import { ProfileEntity } from '../../../utils/DB/entities/DBProfiles';
 import { FastifyInstance } from 'fastify';
+import { getMemberTypeById } from '../../../utils/DB/queries/member-type';
 
 export const GQLProfile = new GraphQLObjectType({
   name: 'GQLProfile',
@@ -17,11 +18,8 @@ export const GQLProfile = new GraphQLObjectType({
     memberTypeId: { type: GraphQLString },
     memberType: {
       type: GQLMemberType,
-      resolve: (profile: ProfileEntity, _, fastify: FastifyInstance) => {
-        return fastify.db.memberTypes.findOne({
-          key: 'id',
-          equals: profile.memberTypeId,
-        })
+      resolve: async (profile: ProfileEntity, _, fastify: FastifyInstance) => {
+        return await getMemberTypeById(profile.memberTypeId, fastify);
       }
     }
   }),

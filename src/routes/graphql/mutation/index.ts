@@ -6,6 +6,9 @@ import { CreatePostMutation } from './create-post';
 import { UpdateUserMutation } from './update-user';
 import { UpdatePostMutation } from './update-post';
 import { UpdateProfileMutation } from './update-profile';
+import { UpdateMemberTypeMutation } from './update-member-type';
+import { SubscribeToUserMutation } from './subscribe-to-user';
+import { UnsubscribeFromUserMutation } from './unsubscribe-from-user';
 
 export const RootMutation = new GraphQLObjectType({
   name: "Mutation",
@@ -19,5 +22,10 @@ export const RootMutation = new GraphQLObjectType({
 
     createPost: CreatePostMutation,
     updatePost: UpdatePostMutation,
+
+    updateMemberType: UpdateMemberTypeMutation,
+
+    subscribeToUser: SubscribeToUserMutation,
+    unsubscribeFromUser: UnsubscribeFromUserMutation,
   }
 });

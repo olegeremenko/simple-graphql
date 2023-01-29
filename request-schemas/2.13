@@ -1,0 +1,15 @@
+mutation {
+    updateProfile(data: {
+        id: "GUID"
+        avatar: "new-image.jpg"
+        sex: "F"
+        birthday: 19
+        country: "Poland"
+        street: "Long Way - 2"
+        city: "Wroclav"
+        memberTypeId: "business"
+    })
+    {
+        id
+    }
+}

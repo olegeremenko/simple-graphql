@@ -1,0 +1,23 @@
+query {
+    user (id: "48397d07-a083-4a80-b811-40e697705f76") {
+        firstName
+        lastName
+        email
+    }
+    post (id: "guid") {
+        title
+        content
+    }
+    profile (id: "guid") {
+        avatar
+        sex
+        birthday
+        country
+        street
+        city
+    }
+    memberType (id: "basic") {
+        discount
+        monthPostsLimit
+    }
+}

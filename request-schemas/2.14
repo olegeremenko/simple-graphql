@@ -1,0 +1,10 @@
+mutation {
+    updatePost(data: {
+        id: "GUID"
+        title: "Article #1 (edited)"
+        content: "Lorem ipsum. Lorem ipsum"
+    })
+    {
+        id
+    }
+}

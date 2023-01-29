@@ -1,0 +1,9 @@
+mutation {
+    unsubscribeFromUser(data: {
+        id: "GUID"
+        unsubscribeFromUserId: "GUID"
+    })
+    {
+        id
+    }
+}

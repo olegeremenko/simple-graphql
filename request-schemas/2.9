@@ -1,0 +1,15 @@
+mutation {
+    createProfile(data: {
+        userId: "GUID"
+        avatar: "image.jpg"
+        sex: "F"
+        birthday: 18
+        country: "Poland"
+        street: "Long Way"
+        city: "Wroclav"
+        memberTypeId: "basic"
+    })
+    {
+        id
+    }
+}

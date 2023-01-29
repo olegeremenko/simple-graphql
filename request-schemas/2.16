@@ -1,0 +1,9 @@
+mutation {
+    subscribeToUser(data: {
+        id: "GUID"
+        subscribeToUserId: "GUID"
+    })
+    {
+        id
+    }
+}

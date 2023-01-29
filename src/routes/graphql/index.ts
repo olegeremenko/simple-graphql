@@ -26,6 +26,7 @@ const plugin: FastifyPluginAsyncJsonSchemaToTs = async (
       const { query, variables } = request.body;
 
       const errors = validate(schema, parse(query!), [depthLimit(ALLOWED_GRAPHQL_DEPTH)]);
+      fastify.loaders.clearCache();
 
       if (errors.length > 0) {
         const result: ExecutionResult = {

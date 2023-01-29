@@ -7,7 +7,7 @@ import { getProfileById } from '../../../utils/DB/queries/profile';
 
 export const UpdateProfileMutation = {
   type: GQLProfile,
-  args: { input: { type: UpdateProfileInputObject } },
+  args: { data: { type: UpdateProfileInputObject } },
   async resolve(_: any, { data }: Record<'data', UpdateProfileDto>, fastify: FastifyInstance) {
     await getProfileById(data.id, fastify);
     await getMemberTypeById(data.memberTypeId, fastify);

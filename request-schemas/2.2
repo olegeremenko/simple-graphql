@@ -1,14 +1,19 @@
-query {
-    user (id: "48397d07-a083-4a80-b811-40e697705f76") {
+query (
+    $userId: ID!,
+    $profileId: ID!,
+    $postId: ID!,
+    $memberTypeId: String!
+) {
+    user (id: $userId) {
         firstName
         lastName
         email
     }
-    post (id: "guid") {
+    post (id: $postId) {
         title
         content
     }
-    profile (id: "guid") {
+    profile (id: $profileId) {
         avatar
         sex
         birthday
@@ -16,7 +21,7 @@ query {
         street
         city
     }
-    memberType (id: "basic") {
+    memberType (id: $memberTypeId) {
         discount
         monthPostsLimit
     }

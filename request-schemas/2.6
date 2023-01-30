@@ -1,5 +1,5 @@
-query {
-    user (id: "GUID") {
+query ($id: ID!) {
+    user (id: $id) {
         firstName
         lastName
         email

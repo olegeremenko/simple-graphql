@@ -1,8 +1,12 @@
-mutation {
+mutation (
+    $firstName: String!,
+    $lastName: String!,
+    $email: String!
+) {
     createUser(data: {
-        firstName: "Jane"
-        lastName: "Dohe"
-        email: "test@example.com"
+        firstName: $firstName,
+        lastName: $lastName,
+        email: $email,
     })
     {
         id

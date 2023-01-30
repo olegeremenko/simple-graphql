@@ -1,9 +1,14 @@
-mutation {
+mutation (
+    $id: ID!,
+    $firstName: String!,
+    $lastName: String!,
+    $email: String!
+) {
     updateUser(data: {
-        id: "GUID"
-        firstName: "Max"
-        lastName: "Pane"
-        email: "max-pane@example.com"
+        id: $id,
+        firstName: $firstName,
+        lastName: $lastName,
+        email: $email,
     })
     {
         id

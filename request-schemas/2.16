@@ -1,7 +1,10 @@
-mutation {
+mutation (
+    $id: ID!,
+    $subscribeToUserId: ID!,
+) {
     subscribeToUser(data: {
-        id: "GUID"
-        subscribeToUserId: "GUID"
+        id: $id,
+        subscribeToUserId: $subscribeToUserId,
     })
     {
         id

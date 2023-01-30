@@ -10,7 +10,7 @@ export const UpdateProfileInputObject = new GraphQLInputObjectType({
     country: { type: new GraphQLNonNull(GraphQLString) },
     street: { type: new GraphQLNonNull(GraphQLString) },
     city: { type: new GraphQLNonNull(GraphQLString) },
-    memberTypeId: { type: new GraphQLNonNull(GraphQLID) }
+    memberTypeId: { type: new GraphQLNonNull(GraphQLString) }
   },
 });
 

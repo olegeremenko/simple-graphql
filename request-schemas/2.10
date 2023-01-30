@@ -1,8 +1,12 @@
-mutation {
+mutation (
+    $userId: ID!,
+    $title: String!,
+    $content: String!
+) {
     createPost(data: {
-        userId: "GUID"
-        title: "Article #1"
-        content: "Lorem ipsum"
+        userId: $userId,
+        title: $title,
+        content: $content,
     })
     {
         id

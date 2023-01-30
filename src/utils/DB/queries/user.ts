@@ -11,3 +11,7 @@ export const getUserById = async (id: any, fastify: FastifyInstance): Promise<Us
 
   return user;
 }
+
+export const getAllUsers = async (fastify: FastifyInstance) => {
+  return await fastify.loaders.entities.load('users');
+}

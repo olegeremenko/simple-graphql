@@ -11,3 +11,7 @@ export const getPostById = async (id: any, fastify: FastifyInstance): Promise<Po
 
   return post;
 }
+
+export const getAllPosts = async (fastify: FastifyInstance) => {
+  return await fastify.loaders.entities.load('posts');
+}

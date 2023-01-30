@@ -11,3 +11,7 @@ export const getMemberTypeById = async (id: any, fastify: FastifyInstance): Prom
 
   return post;
 }
+
+export const getAllMemberTypes = async (fastify: FastifyInstance) => {
+  return await fastify.loaders.entities.load('memberTypes');
+}

@@ -11,3 +11,7 @@ export const getProfileById = async (id: any, fastify: FastifyInstance): Promise
 
   return post;
 }
+
+export const getAllProfiles = async (fastify: FastifyInstance) => {
+  return await fastify.loaders.entities.load('profiles');
+}

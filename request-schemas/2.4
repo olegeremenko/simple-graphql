@@ -1,0 +1,23 @@
+query ($id: ID!) {
+    user (id: $id) {
+        firstName
+        lastName
+        email
+        profile {
+            avatar
+            sex
+            birthday
+            country
+            street
+            city
+            memberType {
+                id
+                discount
+                monthPostsLimit
+            }
+        }
+        posts {
+            title
+        }
+    }
+}

@@ -1,0 +1,12 @@
+mutation (
+    $id: ID!,
+    $unsubscribeFromUserId: ID!,
+) {
+    unsubscribeFromUser(data: {
+        id: $id
+        unsubscribeFromUserId: $unsubscribeFromUserId
+    })
+    {
+        id
+    }
+}

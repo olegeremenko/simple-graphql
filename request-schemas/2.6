@@ -1,0 +1,16 @@
+query ($id: ID!) {
+    user (id: $id) {
+        firstName
+        lastName
+        email
+        posts {
+            id
+            title
+        }
+        subscribedToUser {
+            id
+            firstName
+            lastName
+        }
+    }
+}

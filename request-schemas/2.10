@@ -1,0 +1,14 @@
+mutation (
+    $userId: ID!,
+    $title: String!,
+    $content: String!
+) {
+    createPost(data: {
+        userId: $userId,
+        title: $title,
+        content: $content,
+    })
+    {
+        id
+    }
+}

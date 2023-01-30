@@ -1,0 +1,28 @@
+query (
+    $userId: ID!,
+    $profileId: ID!,
+    $postId: ID!,
+    $memberTypeId: String!
+) {
+    user (id: $userId) {
+        firstName
+        lastName
+        email
+    }
+    post (id: $postId) {
+        title
+        content
+    }
+    profile (id: $profileId) {
+        avatar
+        sex
+        birthday
+        country
+        street
+        city
+    }
+    memberType (id: $memberTypeId) {
+        discount
+        monthPostsLimit
+    }
+}

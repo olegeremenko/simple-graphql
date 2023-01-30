@@ -1,0 +1,12 @@
+mutation (
+    $profileId: ID!,
+    $memberTypeId: String!
+) {
+    updateMemberType(data: {
+        profileId: $profileId
+        memberTypeId: $memberTypeId
+    })
+    {
+        id
+    }
+}

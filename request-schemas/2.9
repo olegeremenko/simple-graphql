@@ -1,0 +1,24 @@
+mutation (
+    $userId: ID!,
+    $avatar: String!,
+    $sex: String!,
+    $birthday: Int!,
+    $country: String!,
+    $street: String!,
+    $city: String!,
+    $memberTypeId: String!,
+) {
+    createProfile(data: {
+        userId: $userId,
+        avatar: $avatar,
+        sex: $sex,
+        birthday: $birthday,
+        country: $country,
+        street: $street,
+        city: $city,
+        memberTypeId: $memberTypeId,
+    })
+    {
+        id
+    }
+}

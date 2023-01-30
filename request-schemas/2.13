@@ -1,0 +1,24 @@
+mutation (
+    $id: ID!,
+    $avatar: String!,
+    $sex: String!,
+    $birthday: Int!,
+    $country: String!,
+    $street: String!,
+    $city: String!,
+    $memberTypeId: String!,
+) {
+    updateProfile(data: {
+        id: $id,
+        avatar: $avatar,
+        sex: $sex,
+        birthday: $birthday,
+        country: $country,
+        street: $street,
+        city: $city,
+        memberTypeId: $memberTypeId,
+    })
+    {
+        id
+    }
+}

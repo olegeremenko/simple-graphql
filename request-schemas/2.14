@@ -1,0 +1,14 @@
+mutation (
+    $id: ID!,
+    $title: String!,
+    $content: String!
+) {
+    updatePost(data: {
+        id: $id,
+        title: $title,
+        content: $content,
+    })
+    {
+        id
+    }
+}
